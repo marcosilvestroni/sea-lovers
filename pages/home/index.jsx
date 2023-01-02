@@ -1,28 +1,20 @@
-import { PageSection, TextHeader, TextWapper } from "./style";
-import Image from "next/image";
-import Menu from "../../components/Menu";
-import Text from "../../components/Text";
+import { PageSection } from "./style";
 
 import imageBanner from "../../assets/img/DSC_0603.JPG";
+import Banner from "./sections/banner";
+import Availability from "./sections/availability";
+import Menu from "components/Menu";
 
 const Home = () => {
   return (
     <>
       <Menu />
       <PageSection id="home">
-        <Image src={imageBanner} alt="Sea Lovers Home" fill />
-        <TextHeader>
-          <TextWapper>
-            <Text tag={"h1"} variant="heading">
-              Sea Lovers Italy Apartment
-            </Text>
-            <Text tag={"h3"} variant="sub-heading">
-              un soggiorno accogliente e rigenerante
-            </Text>
-          </TextWapper>
-        </TextHeader>
+        <Banner />
       </PageSection>
-      <PageSection id="disponibilita"></PageSection>
+      <PageSection id="disponibilita">
+        <Availability />
+      </PageSection>
       <PageSection id="foto">foto</PageSection>
       <PageSection id="contatti">contatti</PageSection>
     </>

@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Unbounded } from "@next/font/google";
 
