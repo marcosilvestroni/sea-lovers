@@ -4,11 +4,24 @@ export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 40vh;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
 `;
 
 export const PageSection = styled.div`
-  min-height: 100vh;
   position: relative;
 `;
+
+export const Overlay = styled.div`
+  background-color: #0000001f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+

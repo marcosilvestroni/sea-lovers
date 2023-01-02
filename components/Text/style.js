@@ -6,6 +6,7 @@ export const Text = styled.span`
       case "heading":
         return css`
           font-weight: bold;
+          margin-bottom: 2rem;
         `;
       case "sub-heading":
         return css`
@@ -19,7 +20,10 @@ export const Text = styled.span`
           }
         `;
       default:
-        css``;
+        css`
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        `;
     }
   }}
 `;

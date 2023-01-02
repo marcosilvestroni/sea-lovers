@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
+import { withMediaQueries } from "utils/withMediaQueries";
 
 import { images } from "./images";
 
-const Photos = () => {
+const Photos = ({ mediaIsDesktop }) => {
   const [index, setIndex] = useState(-1);
 
   const currentImage = images[index];
@@ -23,8 +24,8 @@ const Photos = () => {
     <div>
       <Gallery
         images={images}
-        onClick={handleClick}
-        enableImageSelection={false}
+        onClick={mediaIsDesktop ? handleClick : () => null}
+        enableImageSelection={mediaIsDesktop}
         rowHeight={360}
       />
       {!!currentImage && (
@@ -45,5 +46,5 @@ const Photos = () => {
   );
 };
 
-export default Photos;
+export default withMediaQueries(Photos);
 

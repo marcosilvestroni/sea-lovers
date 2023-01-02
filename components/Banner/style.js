@@ -8,5 +8,6 @@ export const TextWapper = styled.div`
   flex-direction: column;
   height: 10rem;
   color: white;
+  text-align: center;
 `;
 

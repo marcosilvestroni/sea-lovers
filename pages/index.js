@@ -1,13 +1,13 @@
 import { PageSection } from "styles/commons";
 
-import imageBanner from "assets/img/DSC_0603.JPG";
-import Banner from "components/Sections/banner";
+import Banner from "components/Banner";
 import Availability from "components/Sections/availability";
-import Menu from "components/Menu";
 import Photos from "components/Sections/photos";
 import Contacts from "components/Sections/contacts";
 
 import Head from "next/head";
+import Description from "components/Description";
+import ThreeBlocks from "components/TreeBlocks";
 
 const Home = () => {
   return (
@@ -20,18 +20,14 @@ const Home = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Menu />
-      <PageSection id="home">
+      <PageSection>
         <Banner />
       </PageSection>
-      <PageSection id="availability">
-        <Availability />
+      <PageSection>
+        <Description />
       </PageSection>
-      <PageSection id="photo">
-        <Photos />
-      </PageSection>
-      <PageSection id="contacts">
-        <Contacts />
+      <PageSection>
+        <ThreeBlocks />
       </PageSection>
     </>
   );
