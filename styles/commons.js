@@ -8,3 +8,7 @@ export const ContentWrapper = styled.div`
   position: relative;
 `;
 
+export const PageSection = styled.div`
+  min-height: 100vh;
+  position: relative;
+`;
