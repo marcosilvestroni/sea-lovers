@@ -7,13 +7,13 @@ const Menu = () => {
       <MenuItem href="#">
         <Text variant="menu-item">Home</Text>
       </MenuItem>
-      <MenuItem href="#disponibilita">
+      <MenuItem href="#availability">
         <Text variant="menu-item">Disponibilitá</Text>
       </MenuItem>
-      <MenuItem href="#foto">
+      <MenuItem href="#photo">
         <Text variant="menu-item">Foto</Text>
       </MenuItem>
-      <MenuItem href="#contatti">
+      <MenuItem href="#contacts">
         <Text variant="menu-item">Contatti</Text>
       </MenuItem>
     </MenuContainer>
