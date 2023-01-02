@@ -5,6 +5,7 @@ import Banner from "./sections/banner";
 import Availability from "./sections/availability";
 import Menu from "components/Menu";
 import Photos from "./sections/photos";
+import Contacts from "./sections/contacts";
 
 const Home = () => {
   return (
@@ -19,7 +20,9 @@ const Home = () => {
       <PageSection id="photo">
         <Photos />
       </PageSection>
-      <PageSection id="contacts">contatti</PageSection>
+      <PageSection id="contacts">
+        <Contacts />
+      </PageSection>
     </>
   );
 };
