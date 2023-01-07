@@ -10,6 +10,10 @@ export const ThreeBlocksWrapper = styled.div`
   }
 `;
 
+export const TBImgWrapper = styled.div`
+  position: relative;
+`;
+
 export const TBItem = styled.div`
   height: 30vh;
   position: relative;
@@ -20,5 +24,6 @@ export const TBItem = styled.div`
 
 export const TBText = styled.div`
   text-align: center;
+  color: white;
 `;
 
