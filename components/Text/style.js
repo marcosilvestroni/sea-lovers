@@ -19,6 +19,11 @@ export const Text = styled.span`
             text-decoration: underline;
           }
         `;
+      case "title-bar":
+        return css`
+          font-weight: bold;
+          padding: 3rem 1rem;
+        `;
       default:
         css`
           font-size: 1rem;

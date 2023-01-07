@@ -1,9 +1,6 @@
 import { PageSection } from "styles/commons";
 
 import Banner from "components/Banner";
-import Availability from "components/Sections/availability";
-import Photos from "components/Sections/photos";
-import Contacts from "components/Sections/contacts";
 
 import Head from "next/head";
 import Description from "components/Description";

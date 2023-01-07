@@ -1,21 +1,33 @@
 import Text from "../Text";
-import { MenuContainer, MenuItem } from "./styles";
+import { MenuContainer } from "./styles";
+import { slide as MenuRBM } from "react-burger-menu";
+import Link from "next/link";
 
 const Menu = () => {
   return (
     <MenuContainer>
-      <MenuItem href="#">
-        <Text variant="menu-item">Home</Text>
-      </MenuItem>
-      <MenuItem href="#availability">
-        <Text variant="menu-item">Disponibilitá</Text>
-      </MenuItem>
-      <MenuItem href="#photo">
-        <Text variant="menu-item">Foto</Text>
-      </MenuItem>
-      <MenuItem href="#contacts">
-        <Text variant="menu-item">Contatti</Text>
-      </MenuItem>
+      <MenuRBM right width={"100%"}>
+        <Link href="/">
+          <Text tag="span" variant="menu-item">
+            Home
+          </Text>
+        </Link>
+        <Link href="/availability">
+          <Text tag="span" variant="menu-item">
+            Disponibilitá
+          </Text>
+        </Link>
+        <Link href="/gallery">
+          <Text tag="span" variant="menu-item">
+            Gallery
+          </Text>
+        </Link>
+        <Link href="/contatti">
+          <Text tag="span" variant="menu-item">
+            Contatti
+          </Text>
+        </Link>
+      </MenuRBM>
     </MenuContainer>
   );
 };
