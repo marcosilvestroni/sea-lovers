@@ -1,11 +1,14 @@
+import Image from "next/image";
 import { useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { withMediaQueries } from "utils/withMediaQueries";
 
-import { images } from "./images";
+import { imagesApt } from "./images";
+import { ImagesWrapper } from "./style";
 
+const images = [];
 const Photos = ({ mediaIsDesktop }) => {
   const [index, setIndex] = useState(-1);
 
@@ -20,8 +23,8 @@ const Photos = ({ mediaIsDesktop }) => {
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
 
-  return (
-    <div>
+  return mediaIsDesktop ? (
+    <>
       <Gallery
         images={images}
         onClick={mediaIsDesktop ? handleClick : () => null}
@@ -42,7 +45,19 @@ const Photos = ({ mediaIsDesktop }) => {
           onMoveNextRequest={handleMoveNext}
         />
       )}
-    </div>
+    </>
+  ) : (
+    <ImagesWrapper>
+      {imagesApt.map((img) => (
+        <Image
+          src={img.src}
+          width={img.width}
+          height={img.height}
+          alt={img.caption}
+          key={img.src}
+        />
+      ))}
+    </ImagesWrapper>
   );
 };
 

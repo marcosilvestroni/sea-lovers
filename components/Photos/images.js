@@ -9,5 +9,10 @@ const importAll = (r) => {
   }));
 };
 
-export const images = importAll(require.context("assets/gallery", false));
+export const imagesApt = importAll(
+  require.context("assets/gallery/apt", false)
+);
+export const imagesNbh = importAll(
+  require.context("assets/gallery/neighborhood", false)
+);
 
