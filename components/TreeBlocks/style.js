@@ -18,7 +18,7 @@ export const TBItem = styled.div`
   height: 30vh;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 `;
 

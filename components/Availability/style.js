@@ -7,6 +7,8 @@ export const AvailabilityWrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
+  margin-top: 5rem;
+
   .rdrDefinedRangesWrapper {
     display: none;
   }
