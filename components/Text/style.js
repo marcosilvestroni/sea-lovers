@@ -19,6 +19,15 @@ export const Text = styled.span`
             text-decoration: underline;
           }
         `;
+
+      case "sub-menu-item":
+        return css`
+          font-weight: bold;
+          font-size: 0.9rem;
+          :hover {
+            text-decoration: underline;
+          }
+        `;
       case "title-bar":
         return css`
           font-weight: bold;

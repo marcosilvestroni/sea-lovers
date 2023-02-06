@@ -1,3 +1,4 @@
+import Text from "components/Text";
 import Image from "next/image";
 import { useState } from "react";
 import { Gallery } from "react-grid-gallery";
@@ -5,8 +6,8 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { withMediaQueries } from "utils/withMediaQueries";
 
-import { imagesApt } from "./images";
-import { ImagesWrapper } from "./style";
+import { imagesApt, imagesNbh } from "./images";
+import { ImagesWrapper, TitleWrapper } from "./style";
 
 const images = [];
 const Photos = ({ mediaIsDesktop }) => {
@@ -48,7 +49,27 @@ const Photos = ({ mediaIsDesktop }) => {
     </>
   ) : (
     <ImagesWrapper>
+      <TitleWrapper id="apt">
+        <Text tag="h2" variant="header">
+          L'appartamento
+        </Text>
+      </TitleWrapper>
       {imagesApt.map((img) => (
+        <Image
+          src={img.src}
+          width={img.width}
+          height={img.height}
+          alt={img.caption}
+          key={img.src}
+        />
+      ))}
+      <TitleWrapper id="nbh">
+        <Text tag="h2" variant="header">
+          Dintorni
+        </Text>
+      </TitleWrapper>
+
+      {imagesNbh.map((img) => (
         <Image
           src={img.src}
           width={img.width}

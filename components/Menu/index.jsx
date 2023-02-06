@@ -30,6 +30,16 @@ const Menu = () => {
             Gallery
           </Text>
         </Link>
+        <Link href="/gallery#apt" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="sub-menu-item">
+            L'Appartamento
+          </Text>
+        </Link>
+        <Link href="/gallery#nbh" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="sub-menu-item">
+            Dintorni
+          </Text>
+        </Link>
         <Link href="/contacts" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
             Contatti

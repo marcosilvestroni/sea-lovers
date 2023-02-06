@@ -9,3 +9,10 @@ export const ImagesWrapper = styled.div`
   }
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+`;
+
