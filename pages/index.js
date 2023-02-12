@@ -12,13 +12,10 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>{t("homePageTitle")}</title>
+        <title>
+          {t("siteTitle")} | {t("homePageTitle")}
+        </title>
         <meta name="description" content={t("homePageDescription")} />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <meta name="HandheldFriendly" content="true" />
       </Head>
       <PageSection>
         <Banner />

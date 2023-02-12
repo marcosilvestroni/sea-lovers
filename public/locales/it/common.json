@@ -1,7 +1,10 @@
 {
-  "homePageTitle": "Sea Lovers Italy Apartment",
+  "siteTitle": "Sea Lovers Italy Apartment",
+  "homePageTitle": "Home",
   "homePageDescription": "Sea Lovers Italy Apartment Bed & Breakfast",
   "homeBannerTitle": "Sea Lovers Apartment Porto Recanati",
-  "homeBannerSubTitle": "La tua casa fuori casa"
+  "homeBannerSubTitle": "La tua casa fuori casa",
+  "availabiliyTitle": "Disponibilitá",
+  "availabilityDescription": "Verifica la disponibilitá dell'appartamento"
 }
 
