@@ -5,12 +5,14 @@ import Banner from "components/Banner";
 import Head from "next/head";
 import Description from "components/Description";
 import ThreeBlocks from "components/TreeBlocks";
+import { useTranslation } from "next-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Sea Lovers Italy Apartment</title>
+        <title>{t("homePageTitle")}</title>
         <meta
           name="description"
           content="Sea Lovers Italy Apartment Bed & Breakfast"
