@@ -1,5 +1,5 @@
 import { PageSection } from "styles/commons";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Banner from "components/Banner";
 
 import Head from "next/head";
@@ -8,7 +8,7 @@ import ThreeBlocks from "components/TreeBlocks";
 import { useTranslation } from "next-i18next";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
@@ -31,6 +31,12 @@ const Home = () => {
     </>
   );
 };
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? "en", ["common"])),
+  },
+});
 
 export default Home;
 
