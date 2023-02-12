@@ -14,11 +14,11 @@ const Banner = () => {
       <ContentWrapper>
         <Overlay />
         <TextWapper>
-          <Text tag={"h1"} variant="heading">
+          <Text tag={"h1"} variant="heading-shadow">
             {t("homeBannerTitle")}
           </Text>
-          <Text tag={"h2"} variant="sub-heading">
-            La tua casa fuori casa
+          <Text tag={"h2"} variant="sub-heading-shadow">
+            {t("homeBannerSubTitle")}
           </Text>
         </TextWapper>
       </ContentWrapper>

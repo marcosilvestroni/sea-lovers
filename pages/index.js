@@ -13,11 +13,12 @@ const Home = () => {
     <>
       <Head>
         <title>{t("homePageTitle")}</title>
+        <meta name="description" content={t("homePageDescription")} />
         <meta
-          name="description"
-          content="Sea Lovers Italy Apartment Bed & Breakfast"
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="HandheldFriendly" content="true" />
       </Head>
       <PageSection>
         <Banner />

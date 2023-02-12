@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { pxToRem } from "utils/styles";
 
 export const Text = styled.span`
   ${({ variant }) => {
@@ -8,9 +9,23 @@ export const Text = styled.span`
           font-weight: bold;
           margin-bottom: 2rem;
         `;
+      case "heading-shadow":
+        return css`
+          text-shadow: ${pxToRem(2)} ${pxToRem(2)} ${pxToRem(4)} black;
+          font-weight: bold;
+          margin-bottom: 2rem;
+        `;
+      case "sub-heading-shadow":
+        return css`
+          font-weight: bold;
+          text-shadow: ${pxToRem(1)} ${pxToRem(1)} ${pxToRem(1)} black;
+          margin-bottom: 2rem;
+          font-style: italic;
+        `;
       case "sub-heading":
         return css`
           font-weight: bold;
+          margin-bottom: 2rem;
         `;
       case "menu-item":
         return css`

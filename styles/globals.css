@@ -12,14 +12,18 @@ body {
 }
 
 html {
-  font-size: 87.5%;
+  font-size: 150%;
+}
 
-  @media screen and (max-width: 1024px) {
-    font-size: 75%;
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 120%;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    font-size: 62.5%;
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 100%;
   }
 }
 
