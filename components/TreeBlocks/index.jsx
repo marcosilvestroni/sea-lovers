@@ -2,7 +2,7 @@ import Text from "components/Text";
 import Image from "next/image";
 import { TBImgWrapper, TBItem, TBText, ThreeBlocksWrapper } from "./style";
 import img1 from "assets/gallery/apt/21.jpg";
-import img2 from "assets/gallery/apt/7.JPG";
+import img2 from "assets/gallery/apt/5.JPG";
 import img3 from "assets/gallery/apt/6.JPG";
 
 const ThreeBlocks = () => {
