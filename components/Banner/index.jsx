@@ -4,10 +4,8 @@ import { TextWapper } from "./style";
 
 import imageBanner from "assets/img/pool.webp";
 import { ContentWrapper, Overlay } from "styles/commons";
-import { useTranslation } from "next-i18next";
 
-const Banner = () => {
-  const { t } = useTranslation("common");
+const Banner = ({ t }) => {
   return (
     <>
       <Image src={imageBanner} alt="Sea Lovers Home" fill />
@@ -25,12 +23,6 @@ const Banner = () => {
     </>
   );
 };
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? "en", ["common"])),
-  },
-});
 
 export default Banner;
 

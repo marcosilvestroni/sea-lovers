@@ -18,7 +18,7 @@ const Home = () => {
         <meta name="description" content={t("homePageDescription")} />
       </Head>
       <PageSection>
-        <Banner />
+        <Banner t={t} />
       </PageSection>
       <PageSection>
         <Description />

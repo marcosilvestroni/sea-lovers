@@ -11,6 +11,7 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   padding: 1rem;
   z-index: 1000;
+  overflow: hidden;
 
   ${({ isOnTop }) =>
     !isOnTop &&

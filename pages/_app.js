@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { appWithTranslation } from "next-i18next";
 import { Roboto } from "@next/font/google";
-import Footer from "components/Footer";
 import Text from "components/Text";
 import Header from "components/Header";
 
@@ -13,7 +12,6 @@ const App = ({ Component, pageProps }) => {
     <main className={font.className}>
       <Header />
       <Component {...pageProps} />
-      <Footer />
     </main>
   );
 };
