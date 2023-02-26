@@ -16,3 +16,7 @@ export const TitleWrapper = styled.div`
   height: 10rem;
 `;
 
+export const GalleryWrapper = styled.div`
+  margin-top: 5rem;
+`;
+

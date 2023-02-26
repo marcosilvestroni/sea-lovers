@@ -13,7 +13,7 @@ const Availability = () => {
         </title>
         <meta name="description" content={t("availabilityDescription")} />
       </Head>
-      <AvailabilityComp />
+      <AvailabilityComp t={t} />
     </>
   );
 };

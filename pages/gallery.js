@@ -1,5 +1,7 @@
 import Photos from "components/Photos";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 const Gallery = () => {
   const { t } = useTranslation("common");
@@ -11,7 +13,7 @@ const Gallery = () => {
         </title>
         <meta name="description" content={t("galleryPageDescription")} />
       </Head>
-      <Photos />
+      <Photos t={t} />
     </>
   );
 };

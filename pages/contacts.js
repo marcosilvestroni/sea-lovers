@@ -1,5 +1,7 @@
 import ContactsComp from "components/Contacts";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 const Contacts = () => {
   const { t } = useTranslation("common");
@@ -11,7 +13,7 @@ const Contacts = () => {
         </title>
         <meta name="description" content={t("contactsPageDescription")} />
       </Head>
-      <ContactsComp />
+      <ContactsComp t={t} />
     </>
   );
 };

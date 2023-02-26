@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import { ContactsWrapper } from "./styles";
 import emailjs from "@emailjs/browser";
 
-const Contacts = () => {
+const Contacts = ({ t }) => {
   const form = useRef();
 
   const sendEmail = (e) => {

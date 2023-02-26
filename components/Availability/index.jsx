@@ -16,7 +16,7 @@ import Text from "components/Text";
 
 import moment from "moment";
 
-const Availability = () => {
+const Availability = ({ t }) => {
   const [request, setRequest] = useState({
     dateRange: [
       {
