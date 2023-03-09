@@ -7,7 +7,7 @@ export const ContactsWrapper = styled.div`
 
   @media screen and (max-width: 780px) {
     padding: 1rem;
-    height: 100vh;
+    height: 75vh;
     max-width: initial;
     display: flex;
     flex-direction: column;
