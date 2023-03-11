@@ -21,10 +21,10 @@ const Home = () => {
         <Banner t={t} />
       </PageSection>
       <PageSection>
-        <Description />
+        <Description t={t} />
       </PageSection>
       <PageSection>
-        <ThreeBlocks />
+        <ThreeBlocks t={t} />
       </PageSection>
     </>
   );

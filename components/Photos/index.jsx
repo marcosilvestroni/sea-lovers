@@ -18,30 +18,30 @@ const Photos = ({ mediaIsDesktop, t }) => {
     <ImagesWrapper>
       <TitleWrapper id="apt">
         <Text tag="h2" variant="header">
-          L'appartamento
+          {t("galleryPageheader1")}
         </Text>
       </TitleWrapper>
-      {imagesApt.map((img) => (
+      {imagesApt.map((img, i) => (
         <Image
           src={img.src}
           width={img.width}
           height={img.height}
-          alt={img.caption}
+          alt={`${t("imageGenericCaption")} ${t("imageTypeApartment")} ${i}`}
           key={img.src}
         />
       ))}
       <TitleWrapper id="nbh">
         <Text tag="h2" variant="header">
-          Dintorni
+          {t("galleryPageheader2")}
         </Text>
       </TitleWrapper>
 
-      {imagesNbh.map((img) => (
+      {imagesNbh.map((img, i) => (
         <Image
           src={img.src}
           width={img.width}
           height={img.height}
-          alt={img.caption}
+          alt={`${t("imageGenericCaption")} ${t("imageTypeNeibour")} ${i}`}
           key={img.src}
         />
       ))}

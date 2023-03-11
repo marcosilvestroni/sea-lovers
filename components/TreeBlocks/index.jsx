@@ -5,39 +5,36 @@ import img1 from "assets/gallery/apt/21.jpg";
 import img2 from "assets/gallery/apt/5.JPG";
 import img3 from "assets/gallery/apt/6.JPG";
 
-const ThreeBlocks = () => {
+const ThreeBlocks = ({ t }) => {
   return (
     <ThreeBlocksWrapper>
       <TBImgWrapper>
-        <Image src={img1} alt="Check-out flessibile" fill />
+        <Image src={img1} alt={t("homePageBlock1")} fill />
         <TBItem>
           <TBText>
-            <Text tag="h3" variant="sub-heading">
-              Check-out flessibile
+            <Text tag="h3" variant="sub-heading-shadow">
+              {t("homePageBlock1")}
             </Text>
-            {/* <Text variant="sub-heading">Perché siamo i migliori</Text> */}
           </TBText>
         </TBItem>
       </TBImgWrapper>
       <TBImgWrapper>
-        <Image src={img2} alt="Wi-Fi gratuito" fill />
+        <Image src={img2} alt={t("homePageBlock2")} fill />
         <TBItem>
           <TBText>
-            <Text tag="h3" variant="sub-heading">
-              Wi-Fi gratuito
+            <Text tag="h3" variant="sub-heading-shadow">
+              {t("homePageBlock2")}
             </Text>
-            {/* <Text variant="sub-heading">Perché siamo i migliori</Text> */}
           </TBText>
         </TBItem>
       </TBImgWrapper>
       <TBImgWrapper>
-        <Image src={img3} alt="Wi-Fi gratuito" fill />
+        <Image src={img3} alt={t("homePageBlock3")} fill />
         <TBItem>
           <TBText>
-            <Text tag="h3" variant="sub-heading">
-              Cordialitá ed ospitalitá
+            <Text tag="h3" variant="sub-heading-shadow">
+              {t("homePageBlock3")}
             </Text>
-            {/* <Text variant="sub-heading">Perché siamo i migliori</Text> */}
           </TBText>
         </TBItem>
       </TBImgWrapper>

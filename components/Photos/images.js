@@ -5,7 +5,6 @@ const importAll = (r) => {
     src,
     width,
     height,
-    caption: "Sea Lovers Italy Apartment",
   }));
 };
 

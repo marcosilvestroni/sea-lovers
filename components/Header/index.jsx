@@ -4,6 +4,7 @@ import { HeaderWrapper, ImageWrapper, MenuWrapper } from "./style";
 
 import Logo from "assets/img/logo_web.png";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Header = () => {
   const [isOnTop, setIsOnTop] = useState(false);
@@ -20,9 +21,11 @@ const Header = () => {
 
   return (
     <HeaderWrapper isOnTop={isOnTop}>
-      <ImageWrapper>
-        <Image alt="logo  Sea Lovers" src={Logo} />
-      </ImageWrapper>
+      <Link href={"/"}>
+        <ImageWrapper>
+          <Image alt="logo  Sea Lovers" src={Logo} />
+        </ImageWrapper>
+      </Link>
       <MenuWrapper>
         <Menu />
       </MenuWrapper>
