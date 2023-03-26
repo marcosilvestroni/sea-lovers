@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Text from "components/Text";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { ContactsWrapper } from "./styles";
+import { ButtonWrapper, ContactsWrapper } from "./styles";
 import emailjs from "@emailjs/browser";
 import { ReactComponent as Spinner } from "../../assets/img/6.svg";
 import SendStatusResult from "components/SendStatusResult";
@@ -40,38 +40,48 @@ const Contacts = ({ t }) => {
   return (
     <ContactsWrapper>
       <Text tag="h2" variant="header">
-        Contattaci
+        {t("contactsTitle")}
       </Text>
       {loading ? (
         <Spinner />
       ) : sendStatus === "" ? (
         <Form ref={form} onSubmit={sendEmail}>
           <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>{t("contactsName")}</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter name and surname"
+              placeholder={t("contactsNamePlaceholder")}
               name="user_name"
+              required
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>{t("contactsEmail")}</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder={t("contactsEmailPlaceholder")}
               name="user_email"
+              required
             />
             <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              {t("contactsEmailDisclaimer")}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formEmailTextarea">
-            <Form.Label>Message</Form.Label>
-            <Form.Control as="textarea" rows={3} name="user_message" />
+            <Form.Label>{t("contactsMessage")}</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              name="user_message"
+              placeholder={t("contactsMessagePlaceholder")}
+              required
+            />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Contact Us
-          </Button>
+          <ButtonWrapper>
+            <Button variant="primary" type="submit">
+              {t("contactsSubmit")}
+            </Button>
+          </ButtonWrapper>
         </Form>
       ) : (
         <SendStatusResult status={sendStatus} />

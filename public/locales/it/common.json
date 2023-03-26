@@ -20,6 +20,18 @@
   "galleryPageheader2": "Dintorni",
   "imageGenericCaption": "Sea Lovers Italy Apartment",
   "imageTypeApartment": "Appartamento",
-  "imageTypeNeibour": "Dintorni"
+  "imageTypeNeibour": "Dintorni",
+  "contactsTitle": "Contattaci",
+  "contactsName": "Nominativo",
+  "contactsNamePlaceholder": "Inserisci il tuo nominativo",
+  "contactsEmail": "Indirizzo Email",
+  "contactsEmailPlaceholder": "Inserisci un indirizzo email valido",
+  "contactsEmailDisclaimer": "Non condivideremo la tua mail con nessun'altro",
+  "contactsMessage": "Messaggio",
+  "contactsMessagePlaceholder": "Inserisci il testo del tuo messaggio",
+  "contactsSubmit": "Contattaci",
+  "availabilityTitle": "Controlla la disponibilitá",
+  "availabilityNote": "Note",
+  "availabilitySend": "Invia richiesta per controllare la disponibilitá"
 }
 

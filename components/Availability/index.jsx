@@ -106,7 +106,7 @@ const Availability = ({ t }) => {
       ) : sendStatus === "" ? (
         <AvailabilityWrapper>
           <Text tag="h2" variant="header">
-            Controlla la disponibilitá
+            {t("availabilityTitle")}
           </Text>
           <Form className="formFields" ref={form}>
             <FormWrapper>
@@ -122,26 +122,26 @@ const Availability = ({ t }) => {
               />
               <FieldsWrapper>
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Name</Form.Label>
+                  <Form.Label>{t("contactsName")}</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter name and surname"
+                    placeholder={t("contactsNamePlaceholder")}
                     name="user_name"
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>{t("contactsEmail")}</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Enter email"
+                    placeholder={t("contactsEmailPlaceholder")}
                     name="user_email"
                   />
                   <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
+                    {t("contactsEmailDisclaimer")}
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmailTextarea">
-                  <Form.Label>Note</Form.Label>
+                  <Form.Label>{t("availabilityNote")}</Form.Label>
                   <Form.Control as="textarea" rows={6} name="user_message" />
                 </Form.Group>
               </FieldsWrapper>
@@ -152,7 +152,7 @@ const Availability = ({ t }) => {
                 type="submit"
                 onClick={sendAvailabilityRequest}
               >
-                Invia richiesta per controllare la disponibilitá
+                {t("availabilitySend")}
               </Button>
             </ButtonWrapper>
           </Form>
