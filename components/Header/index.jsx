@@ -1,13 +1,15 @@
-import Menu from "components/Menu";
+import Menu from "../Menu";
 import Image from "next/image";
 import { HeaderWrapper, ImageWrapper, MenuWrapper } from "./style";
 
-import Logo from "assets/img/logo_web.png";
+import Logo from "/assets/img/logo_web.png";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [isOnTop, setIsOnTop] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -23,7 +25,7 @@ const Header = () => {
     <HeaderWrapper isOnTop={isOnTop}>
       <Link href={"/"}>
         <ImageWrapper>
-          <Image alt="logo  Sea Lovers" src={Logo} />
+          <Image alt={t("imageGenericCaption")} src={Logo} />
         </ImageWrapper>
       </Link>
       <MenuWrapper>

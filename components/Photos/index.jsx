@@ -1,8 +1,6 @@
-import Text from "components/Text";
+import Text from "../Text";
 import Image from "next/image";
 import { Gallery } from "react-grid-gallery";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 import { withMediaQueries } from "utils/withMediaQueries";
 
 import { imagesApt, imagesNbh } from "./images";

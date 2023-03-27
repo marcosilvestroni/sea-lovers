@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import Text from "components/Text";
+import Text from "../Text";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { ButtonWrapper, ContactsWrapper } from "./styles";
 import emailjs from "@emailjs/browser";
-import { ReactComponent as Spinner } from "../../assets/img/6.svg";
-import SendStatusResult from "components/SendStatusResult";
+import { ReactComponent as Spinner } from "/assets/img/6.svg";
+import SendStatusResult from "../SendStatusResult";
 
 const Contacts = ({ t }) => {
   const form = useRef();

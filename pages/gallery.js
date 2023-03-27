@@ -1,4 +1,4 @@
-import Photos from "components/Photos";
+import Photos from "../components/Photos";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";

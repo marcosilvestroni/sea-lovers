@@ -9,9 +9,9 @@ const importAll = (r) => {
 };
 
 export const imagesApt = importAll(
-  require.context("assets/gallery/apt", false)
+  require.context("/assets/gallery/apt", false)
 );
 export const imagesNbh = importAll(
-  require.context("assets/gallery/neighborhood", false)
+  require.context("/assets/gallery/neighborhood", false)
 );
 

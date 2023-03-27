@@ -1,10 +1,10 @@
-import { PageSection } from "styles/commons";
+import { PageSection } from "../styles/commons";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Banner from "components/Banner";
+import Banner from "../components/Banner";
 
 import Head from "next/head";
-import Description from "components/Description";
-import ThreeBlocks from "components/TreeBlocks";
+import Description from "../components/Description";
+import ThreeBlocks from "../components/TreeBlocks";
 import { useTranslation } from "next-i18next";
 
 const Home = () => {

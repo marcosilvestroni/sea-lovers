@@ -1,14 +1,15 @@
 import Image from "next/image";
-import Text from "components/Text";
+import Text from "../Text";
 import { TextWapper } from "./style";
 
-import imageBanner from "assets/img/pool.webp";
+import BannerImg from "/assets/img/pool.webp";
+
 import { ContentWrapper, Overlay } from "styles/commons";
 
 const Banner = ({ t }) => {
   return (
     <>
-      <Image src={imageBanner} alt="Sea Lovers Home" fill />
+      <Image src={BannerImg} alt={t("imageGenericCaption")} fill />
       <ContentWrapper>
         <Overlay />
         <TextWapper>

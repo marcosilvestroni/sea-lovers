@@ -12,11 +12,11 @@ import {
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import Text from "components/Text";
+import Text from "../Text";
 import emailjs from "@emailjs/browser";
 import moment from "moment";
-import { ReactComponent as Spinner } from "../../assets/img/6.svg";
-import SendStatusResult from "components/SendStatusResult";
+import { ReactComponent as Spinner } from "/assets/img/6.svg";
+import SendStatusResult from "../SendStatusResult";
 
 const Availability = ({ t }) => {
   const [request, setRequest] = useState({
