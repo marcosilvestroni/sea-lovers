@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { ButtonWrapper, ContactsWrapper } from "./styles";
 import emailjs from "@emailjs/browser";
-import { ReactComponent as Spinner } from "/assets/img/6.svg";
 import SendStatusResult from "../SendStatusResult";
+import Image from "next/image";
 
 const Contacts = ({ t }) => {
   const form = useRef();
@@ -43,7 +43,7 @@ const Contacts = ({ t }) => {
         {t("contactsTitle")}
       </Text>
       {loading ? (
-        <Spinner />
+        <Image src="/assets/img/6.svg" width={40} height={40} alt="spinner" />
       ) : sendStatus === "" ? (
         <Form ref={form} onSubmit={sendEmail}>
           <Form.Group className="mb-3" controlId="formEmail">

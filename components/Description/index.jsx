@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { DescriptionImage, DescriptionText, DescriptionWrapper } from "./style";
-import imgSrc from "/assets/img/blue.JPG";
 import Text from "../Text";
 
 const Description = ({ t }) => {
@@ -19,7 +18,7 @@ const Description = ({ t }) => {
         <Text>{t("homePageDescrBlock6")}</Text>
       </DescriptionText>
       <DescriptionImage>
-        <Image src={imgSrc} alt={t("homePageDescrTitle")} />
+        <Image src="/assets/img/blue.JPG" alt={t("homePageDescrTitle")} fill />
       </DescriptionImage>
     </DescriptionWrapper>
   );

@@ -1,12 +1,13 @@
 import Text from "../Text";
 import Image from "next/image";
 import { Gallery } from "react-grid-gallery";
-import { withMediaQueries } from "utils/withMediaQueries";
+import { withMediaQueries } from "../../utils/withMediaQueries";
 
-import { imagesApt, imagesNbh } from "./images";
+//import { imagesApt, imagesNbh } from "./images";
 import { ImagesWrapper, TitleWrapper, GalleryWrapper } from "./style";
 
-const images = [...imagesApt, ...imagesNbh];
+const images = [{ src: "/assets/gallery/apt/21.jpg", height: 400, width: 400 }];
+
 const Photos = ({ mediaIsDesktop, t }) => {
   return mediaIsDesktop ? (
     <GalleryWrapper>
@@ -19,7 +20,7 @@ const Photos = ({ mediaIsDesktop, t }) => {
           {t("galleryPageheader1")}
         </Text>
       </TitleWrapper>
-      {imagesApt.map((img, i) => (
+      {[].map((img, i) => (
         <Image
           src={img.src}
           width={img.width}
@@ -34,7 +35,7 @@ const Photos = ({ mediaIsDesktop, t }) => {
         </Text>
       </TitleWrapper>
 
-      {imagesNbh.map((img, i) => (
+      {[].map((img, i) => (
         <Image
           src={img.src}
           width={img.width}

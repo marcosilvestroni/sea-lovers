@@ -1,4 +1,4 @@
-import { ContentWrapper } from "styles/commons";
+import { ContentWrapper } from "../../styles/commons";
 import { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -15,8 +15,8 @@ import "react-date-range/dist/theme/default.css";
 import Text from "../Text";
 import emailjs from "@emailjs/browser";
 import moment from "moment";
-import { ReactComponent as Spinner } from "/assets/img/6.svg";
 import SendStatusResult from "../SendStatusResult";
+import Image from "next/image";
 
 const Availability = ({ t }) => {
   const [request, setRequest] = useState({
@@ -102,7 +102,7 @@ const Availability = ({ t }) => {
   return (
     <ContentWrapper>
       {loading ? (
-        <Spinner />
+        <Image src="/assets/img/6.svg" width={40} height={40} alt="spinner" />
       ) : sendStatus === "" ? (
         <AvailabilityWrapper>
           <Text tag="h2" variant="header">

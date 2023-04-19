@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { pxToRem } from "utils/styles";
+import { pxToRem } from "../../utils/styles";
 
 export const Text = styled.span`
   ${({ variant }) => {

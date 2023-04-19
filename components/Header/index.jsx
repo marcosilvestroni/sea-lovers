@@ -2,7 +2,6 @@ import Menu from "../Menu";
 import Image from "next/image";
 import { HeaderWrapper, ImageWrapper, MenuWrapper } from "./style";
 
-import Logo from "/assets/img/logo_web.png";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -25,7 +24,12 @@ const Header = () => {
     <HeaderWrapper isOnTop={isOnTop}>
       <Link href={"/"}>
         <ImageWrapper>
-          <Image alt={t("imageGenericCaption")} src={Logo} />
+          <Image
+            alt={t("imageGenericCaption")}
+            src={"/assets/img/logo_web.png"}
+            width={60}
+            height={60}
+          />
         </ImageWrapper>
       </Link>
       <MenuWrapper>
