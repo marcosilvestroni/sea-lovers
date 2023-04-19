@@ -18,5 +18,6 @@ export const TitleWrapper = styled.div`
 
 export const GalleryWrapper = styled.div`
   margin-top: 5rem;
+  background-color: #816e7c4f;
 `;
 

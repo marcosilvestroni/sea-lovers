@@ -10,9 +10,10 @@
 
 html,
 body {
-  max-width: 100vw;
+  min-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: #816e7c4f;
 }
 
 html {
@@ -34,9 +35,5 @@ html {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-main {
-  background-color: #816e7c4f;
 }
 
