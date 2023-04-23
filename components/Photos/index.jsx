@@ -11,11 +11,7 @@ const images = [...imagesApt, ...imagesNbh];
 const Photos = ({ mediaIsDesktop, t }) => {
   return mediaIsDesktop ? (
     <GalleryWrapper>
-      <Gallery
-        images={imagesApt}
-        enableImageSelection={false}
-        rowHeight={360}
-      />
+      <Gallery images={images} enableImageSelection={false} rowHeight={360} />
     </GalleryWrapper>
   ) : (
     <ImagesWrapper>
