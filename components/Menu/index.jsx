@@ -1,21 +1,51 @@
 import Text from "../Text";
-import { MenuContainer, MenuItem } from "./styles";
+import { MenuContainer } from "./styles";
+import { slide as MenuRBM } from "react-burger-menu";
+import Link from "next/link";
+import { useState } from "react";
 
 const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <MenuContainer>
-      <MenuItem href="#">
-        <Text variant="menu-item">Home</Text>
-      </MenuItem>
-      <MenuItem href="#disponibilita">
-        <Text variant="menu-item">Disponibilitá</Text>
-      </MenuItem>
-      <MenuItem href="#foto">
-        <Text variant="menu-item">Foto</Text>
-      </MenuItem>
-      <MenuItem href="#contatti">
-        <Text variant="menu-item">Contatti</Text>
-      </MenuItem>
+      <MenuRBM
+        right
+        width={"100%"}
+        isOpen={isOpen}
+        onOpen={() => setIsOpen(true)}
+      >
+        <Link href="/" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="menu-item">
+            Home
+          </Text>
+        </Link>
+        <Link href="/availability" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="menu-item">
+            Disponibilitá
+          </Text>
+        </Link>
+        <Link href="/gallery" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="menu-item">
+            Gallery
+          </Text>
+        </Link>
+        {/* <Link href="/gallery#apt" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="sub-menu-item">
+            L'Appartamento
+          </Text>
+        </Link>
+        <Link href="/gallery#nbh" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="sub-menu-item">
+            Dintorni
+          </Text>
+        </Link> */}
+        <Link href="/contacts" onClick={() => setIsOpen(false)}>
+          <Text tag="span" variant="menu-item">
+            Contatti
+          </Text>
+        </Link>
+      </MenuRBM>
     </MenuContainer>
   );
 };
