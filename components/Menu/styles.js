@@ -18,10 +18,14 @@ export const MenuContainer = styled.div`
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
     position: relative;
+    width: 2rem !important;
+    height: 2rem !important;
   }
 
   .bm-cross {
     background: #bdc3c7;
+    width: 2rem;
+    height: 2rem;
   }
 
   .bm-menu-wrap {
