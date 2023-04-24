@@ -16,6 +16,7 @@ const Description = ({ t }) => {
         <Text>{t("homePageDescrBlock4")}</Text>
         <Text>{t("homePageDescrBlock5")}</Text>
         <Text>{t("homePageDescrBlock6")}</Text>
+        <Text>{t("homePageDescrBlock7")}</Text>
       </DescriptionText>
       <DescriptionImage>
         <Image src="/assets/img/blue.JPG" alt={t("homePageDescrTitle")} fill />

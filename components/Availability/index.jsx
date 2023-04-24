@@ -127,6 +127,7 @@ const Availability = ({ t }) => {
                     type="text"
                     placeholder={t("contactsNamePlaceholder")}
                     name="user_name"
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmail">
@@ -135,6 +136,7 @@ const Availability = ({ t }) => {
                     type="email"
                     placeholder={t("contactsEmailPlaceholder")}
                     name="user_email"
+                    required
                   />
                   <Form.Text className="text-muted">
                     {t("contactsEmailDisclaimer")}
@@ -158,7 +160,7 @@ const Availability = ({ t }) => {
           </Form>
         </AvailabilityWrapper>
       ) : (
-        <SendStatusResult status={sendStatus} />
+        <SendStatusResult status={sendStatus} t={t} />
       )}
     </ContentWrapper>
   );

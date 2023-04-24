@@ -2,7 +2,7 @@
   "siteTitle": "Sea Lovers Italy Apartment",
   "homePageTitle": "Home",
   "homePageDescription": "Sea Lovers Italy Apartment Bed & Breakfast",
-  "homeBannerTitle": "Sea Lovers Apartment Porto Recanati",
+  "homeBannerTitle": "Sea Lovers Italy Apartment Porto Recanati",
   "homeBannerSubTitle": "Your home out of home",
   "homePageBlock1": "Flexible checkout",
   "homePageBlock2": "Free Wi-Fi",
@@ -14,6 +14,7 @@
   "homePageDescrBlock4": "You will be welcome lovers of the sea! I am available for advice on the area and on the attractions of reference to ensure that you can spend a pleasant stay in the Marche region. As a passionate traveler I recommend this area for its landscapes, tranquility and good food. The guide and photos will give you a more detailed idea.",
   "homePageDescrBlock5": "The apartment is located in the city center, few meters from a pharmacy, supermarkets, coffees, restaurants and green areas. In addition to all the boutiques of the small shops in the main street, it is possible to enjoy the proximity of the beach and the chalets by the sea within walking distance.",
   "homePageDescrBlock6": "Close to the apartment, the parking lots are totally free, however it is important to take into consideration the hours of the ZTL (pedestrian area) that regulates entries into the area in the summer months. We will provide further informations upon arrival. The number of license plate will be enought.",
+  "homePageDescrBlock7": "",
   "availabiliyTitle": "Availability",
   "availabilityDescription": "Look for the availability",
   "galleryPageTitle": "Gallery",
@@ -34,6 +35,8 @@
   "contactsSubmit": "Contact us",
   "availabilityTitle": "Look for availability",
   "availabilityNote": "Notes",
-  "availabilitySend": "Send your request to check availability"
+  "availabilitySend": "Send your request to check availability",
+  "formSuccess": "Send successfully",
+  "formFail": "There was an error while sending, try again!"
 }
 
