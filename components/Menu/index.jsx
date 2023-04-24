@@ -3,10 +3,11 @@ import { MenuContainer } from "./styles";
 import { slide as MenuRBM } from "react-burger-menu";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { t } = useTranslation();
   return (
     <MenuContainer>
       <MenuRBM
@@ -22,7 +23,7 @@ const Menu = () => {
         </Link>
         <Link href="/availability" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
-            Disponibilitá
+            {t("availabiliyTitle")}
           </Text>
         </Link>
         <Link href="/gallery" onClick={() => setIsOpen(false)}>
@@ -42,7 +43,7 @@ const Menu = () => {
         </Link> */}
         <Link href="/contacts" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
-            Contatti
+            {t("contactsTitle")}
           </Text>
         </Link>
       </MenuRBM>
