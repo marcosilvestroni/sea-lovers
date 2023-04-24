@@ -4,6 +4,7 @@ import { slide as MenuRBM } from "react-burger-menu";
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,15 @@ const Menu = () => {
         width={"100%"}
         isOpen={isOpen}
         onOpen={() => setIsOpen(true)}
+        onClose={() => setIsOpen(false)}
+        customCrossIcon={
+          <Image
+            src="/assets/img/cross-close.png"
+            alt={t("imageGenericCaption")}
+            width={90}
+            height={90}
+          />
+        }
       >
         <Link href="/" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">

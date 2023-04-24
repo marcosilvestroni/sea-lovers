@@ -15,6 +15,7 @@ export const DescriptionText = styled.div`
 `;
 
 export const DescriptionImage = styled.div`
+  position: relative;
   img {
     max-width: 100%;
     height: 100%;
