@@ -46,7 +46,7 @@ const Contacts = ({ t }) => {
         <Image src="/assets/img/6.svg" width={40} height={40} alt="spinner" />
       ) : sendStatus === "" ? (
         <Form ref={form} onSubmit={sendEmail}>
-          <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Group className="mb-3" controlId="formName">
             <Form.Label>{t("contactsName")}</Form.Label>
             <Form.Control
               type="text"
@@ -84,7 +84,7 @@ const Contacts = ({ t }) => {
           </ButtonWrapper>
         </Form>
       ) : (
-        <SendStatusResult status={sendStatus} />
+        <SendStatusResult status={sendStatus} t={t} />
       )}
     </ContactsWrapper>
   );

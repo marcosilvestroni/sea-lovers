@@ -34,6 +34,8 @@
   "contactsSubmit": "Contattaci",
   "availabilityTitle": "Controlla la disponibilitá",
   "availabilityNote": "Note",
-  "availabilitySend": "Invia richiesta per controllare la disponibilitá"
+  "availabilitySend": "Invia richiesta per controllare la disponibilitá",
+  "formSuccess": "Inviato con successo",
+  "formFail": "C'é stato un problema con l'invio, riprova!"
 }
 

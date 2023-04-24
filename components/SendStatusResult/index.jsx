@@ -1,9 +1,10 @@
-const SendStatusResult = ({ status }) => {
+const SendStatusResult = ({ status, t }) => {
   if (status === "OK") {
-    return <div>Inviato con successo</div>;
+    return <div>{t("formSuccess")}</div>;
   }
 
-  return <div>c'é stato un problem con l'invio, riprova!</div>;
+  return <div>{t("formFail")}</div>;
 };
 
 export default SendStatusResult;
+

@@ -34,6 +34,8 @@
   "contactsSubmit": "Contact us",
   "availabilityTitle": "Look for availability",
   "availabilityNote": "Notes",
-  "availabilitySend": "Send your request to check availability"
+  "availabilitySend": "Send your request to check availability",
+  "formSuccess": "Send successfully",
+  "formFail": "There was an error while sending, try again!"
 }
 
