@@ -68,14 +68,21 @@ const Availability = ({ t }) => {
 
   const sendAvailabilityRequest = (e) => {
     e.preventDefault();
-
-    isLoading(true);
-
     const dates = { ...request.dateRange[0] };
+
+    if (!dates?.endDate || !dates?.startDate) {
+      return;
+    }
 
     dates.endDate = dates.endDate.toLocaleDateString("it-IT");
     dates.startDate = dates.startDate.toLocaleDateString("it-IT");
     const data = new FormData(form.current);
+
+    if (!data.get("user_name") || !data.get("user_email")) {
+      return;
+    }
+
+    isLoading(true);
     const payload = {
       user_name: data.get("user_name"),
       user_email: data.get("user_email"),
@@ -108,7 +115,11 @@ const Availability = ({ t }) => {
           <Text tag="h2" variant="header">
             {t("availabilityTitle")}
           </Text>
-          <Form className="formFields" ref={form}>
+          <Form
+            className="formFields"
+            ref={form}
+            onSubmit={sendAvailabilityRequest}
+          >
             <FormWrapper>
               <DateRangePicker
                 ranges={request?.dateRange}
@@ -122,7 +133,7 @@ const Availability = ({ t }) => {
               />
               <FieldsWrapper>
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>{t("contactsName")}</Form.Label>
+                  <Form.Label>{t("contactsName")}*</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder={t("contactsNamePlaceholder")}
@@ -131,7 +142,7 @@ const Availability = ({ t }) => {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>{t("contactsEmail")}</Form.Label>
+                  <Form.Label>{t("contactsEmail")}*</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder={t("contactsEmailPlaceholder")}
@@ -149,11 +160,7 @@ const Availability = ({ t }) => {
               </FieldsWrapper>
             </FormWrapper>
             <ButtonWrapper>
-              <Button
-                variant="primary"
-                type="submit"
-                onClick={sendAvailabilityRequest}
-              >
+              <Button variant="primary" type="submit">
                 {t("availabilitySend")}
               </Button>
             </ButtonWrapper>
