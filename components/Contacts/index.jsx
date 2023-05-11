@@ -14,6 +14,11 @@ const Contacts = ({ t }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const data = new FormData(form.current);
+    if (!data.get("user_name") || !data.get("user_email")) {
+      return;
+    }
+
     isLoading(true);
 
     emailjs
@@ -47,7 +52,7 @@ const Contacts = ({ t }) => {
       ) : sendStatus === "" ? (
         <Form ref={form} onSubmit={sendEmail}>
           <Form.Group className="mb-3" controlId="formName">
-            <Form.Label>{t("contactsName")}</Form.Label>
+            <Form.Label>{t("contactsName")}*</Form.Label>
             <Form.Control
               type="text"
               placeholder={t("contactsNamePlaceholder")}
@@ -56,7 +61,7 @@ const Contacts = ({ t }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>{t("contactsEmail")}</Form.Label>
+            <Form.Label>{t("contactsEmail")}*</Form.Label>
             <Form.Control
               type="email"
               placeholder={t("contactsEmailPlaceholder")}
