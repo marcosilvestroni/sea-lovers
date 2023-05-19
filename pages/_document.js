@@ -82,6 +82,13 @@ export default function Document() {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <meta name="HandheldFriendly" content="true" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/assets/gallery/apt/1.jpg" />
+        <meta
+          property="og:url"
+          content="https://sealoversitalyapartment.com/"
+        />
       </Head>
       <body>
         <Main />

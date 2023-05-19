@@ -12,6 +12,14 @@ const Availability = () => {
           {t("siteTitle")} | {t("availabiliyTitle")}
         </title>
         <meta name="description" content={t("availabilityDescription")} />
+        <meta
+          property="og:title"
+          content={`${t("siteTitle")} | ${t("availabiliyTitle")}`}
+        />
+        <meta
+          property="og:description"
+          content={t("availabilityDescription")}
+        />
       </Head>
       <AvailabilityComp t={t} />
     </>

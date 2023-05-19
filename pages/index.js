@@ -16,6 +16,11 @@ const Home = () => {
           {t("siteTitle")} | {t("homePageTitle")}
         </title>
         <meta name="description" content={t("homePageDescription")} />
+        <meta
+          property="og:title"
+          content={`${t("siteTitle")} | ${t("homePageTitle")}`}
+        />
+        <meta property="og:description" content={t("homePageDescription")} />
       </Head>
       <PageSection>
         <Banner t={t} />
