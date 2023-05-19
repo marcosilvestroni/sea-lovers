@@ -12,6 +12,11 @@ const Gallery = () => {
           {t("siteTitle")} | {t("galleryPageTitle")}
         </title>
         <meta name="description" content={t("galleryPageDescription")} />
+        <meta
+          property="og:title"
+          content={`${t("siteTitle")} | ${t("galleryPageTitle")}`}
+        />
+        <meta property="og:description" content={t("galleryPageDescription")} />
       </Head>
       <Photos t={t} />
     </>

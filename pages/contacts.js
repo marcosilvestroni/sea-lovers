@@ -13,6 +13,14 @@ const Contacts = () => {
           {t("siteTitle")} | {t("contactsPageTitle")}
         </title>
         <meta name="description" content={t("contactsPageDescription")} />
+        <meta
+          property="og:title"
+          content={`${t("siteTitle")} | ${t("contactsPageTitle")}`}
+        />
+        <meta
+          property="og:description"
+          content={t("contactsPageDescription")}
+        />
       </Head>
       <WhereWeAre />
       <ContactsComp t={t} />
