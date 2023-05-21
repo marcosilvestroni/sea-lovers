@@ -10,12 +10,6 @@ const LanguageSwitcher = ({ onChange }) => {
   const router = useRouter();
   const locales = router.locales ?? [currentLanguage];
 
-  const languageNames = useMemo(() => {
-    return new Intl.DisplayNames([currentLanguage], {
-      type: "language",
-    });
-  }, [currentLanguage]);
-
   const [value, setValue] = useState(i18n.language);
 
   const switchToLocale = useCallback(
