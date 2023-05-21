@@ -12,6 +12,7 @@ export const HeaderWrapper = styled.div`
   padding: 1rem;
   z-index: 1000;
   overflow: hidden;
+  gap: 1rem;
 
   ${({ isOnTop }) =>
     !isOnTop &&
@@ -37,3 +38,6 @@ export const MenuWrapper = styled.div`
   position: relative;
 `;
 
+export const Logo = styled.div`
+  flex: 1;
+`;

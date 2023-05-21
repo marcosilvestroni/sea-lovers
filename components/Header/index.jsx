@@ -1,10 +1,11 @@
 import Menu from "../Menu";
 import Image from "next/image";
-import { HeaderWrapper, ImageWrapper, MenuWrapper } from "./style";
+import { HeaderWrapper, ImageWrapper, Logo, MenuWrapper } from "./style";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const Header = () => {
   const [isOnTop, setIsOnTop] = useState(false);
@@ -22,16 +23,20 @@ const Header = () => {
 
   return (
     <HeaderWrapper isOnTop={isOnTop}>
-      <Link href={"/"}>
-        <ImageWrapper>
-          <Image
-            alt={t("imageGenericCaption")}
-            src={"/assets/img/logo_web.png"}
-            width={60}
-            height={60}
-          />
-        </ImageWrapper>
-      </Link>
+      <Logo>
+        <Link href={"/"}>
+          <ImageWrapper>
+            <Image
+              alt={t("imageGenericCaption")}
+              src={"/assets/img/logo_web.png"}
+              width={60}
+              height={60}
+            />
+          </ImageWrapper>
+        </Link>
+      </Logo>
+
+      <LanguageSwitcher />
       <MenuWrapper>
         <Menu />
       </MenuWrapper>
