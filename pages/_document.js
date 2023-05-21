@@ -77,10 +77,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+
         <meta name="HandheldFriendly" content="true" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
