@@ -3,6 +3,9 @@
   "homePageTitle": "Home",
   "homePageDescription": "Sea Lovers Italy Apartment Bed & Breakfast",
   "homeBannerTitle": "Sea Lovers Italy Apartment Porto Recanati",
+  "homeBannerTitle1": "Sea Lovers",
+  "homeBannerTitle2": "Italy Apartment",
+  "homeBannerTitle3": "Porto Recanati",
   "homeBannerSubTitle": "Your home out of home",
   "homePageBlock1": "Flexible checkout",
   "homePageBlock2": "Free Wi-Fi",
@@ -39,4 +42,3 @@
   "formSuccess": "Send successfully",
   "formFail": "There was an error while sending, try again!"
 }
-
