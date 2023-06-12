@@ -13,7 +13,13 @@ export const Text = styled.span`
         return css`
           text-shadow: ${pxToRem(2)} ${pxToRem(2)} ${pxToRem(4)} black;
           font-weight: bold;
-          margin-bottom: 2rem;
+          margin-bottom: 0.5rem;
+        `;
+      case "heading-shadow-last":
+        return css`
+          text-shadow: ${pxToRem(2)} ${pxToRem(2)} ${pxToRem(4)} black;
+          font-weight: bold;
+          margin-bottom: 1.5rem;
         `;
       case "sub-heading-shadow":
         return css`
@@ -56,4 +62,3 @@ export const Text = styled.span`
     }
   }}
 `;
-

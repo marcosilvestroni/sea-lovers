@@ -6,10 +6,6 @@ export const ContentWrapper = styled.div`
   justify-content: center;
   min-height: 70vh;
   position: relative;
-
-  @media screen and (max-width: 768px) {
-    height: 100vh;
-  }
 `;
 
 export const PageSection = styled.div`

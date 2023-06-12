@@ -19,11 +19,10 @@ const Description = ({ t }) => {
         <Text>{t("homePageDescrBlock7")}</Text>
       </DescriptionText>
       <DescriptionImage>
-        <Image src="/assets/img/blue.JPG" alt={t("homePageDescrTitle")} fill />
+        <Image src="/assets/img/blue.jpg" alt={t("homePageDescrTitle")} fill />
       </DescriptionImage>
     </DescriptionWrapper>
   );
 };
 
 export default Description;
-

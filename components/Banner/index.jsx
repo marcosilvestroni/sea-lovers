@@ -21,7 +21,7 @@ const Banner = ({ t, mediaIsPhone }) => {
               <Text tag={"h1"} variant="heading-shadow">
                 {t("homeBannerTitle2")}
               </Text>
-              <Text tag={"h1"} variant="heading-shadow">
+              <Text tag={"h1"} variant="heading-shadow-last">
                 {t("homeBannerTitle3")}
               </Text>
             </>
