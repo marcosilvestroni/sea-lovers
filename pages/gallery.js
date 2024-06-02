@@ -8,9 +8,7 @@ const Gallery = () => {
   return (
     <>
       <Head>
-        <title>
-          {t("siteTitle")} | {t("galleryPageTitle")}
-        </title>
+        <title>{`${t("siteTitle")} | ${t("galleryPageTitle")}`}</title>
         <meta name="description" content={t("galleryPageDescription")} />
         <meta
           property="og:title"

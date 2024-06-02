@@ -9,9 +9,7 @@ const Contacts = () => {
   return (
     <>
       <Head>
-        <title>
-          {t("siteTitle")} | {t("contactsPageTitle")}
-        </title>
+        <title>{`${t("siteTitle")} | ${t("contactsPageTitle")}`}</title>
         <meta name="description" content={t("contactsPageDescription")} />
         <meta
           property="og:title"

@@ -1,7 +1,7 @@
 // High-order components must use the spreading operator
 // to pass the props down to the real one.
 /* eslint-disable react/jsx-props-no-spreading */
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const breakpoint = {
   mobile: 320,
@@ -20,7 +20,7 @@ export function withMediaQueries(LazyComp) {
   const WithMediaQueries = (props) => {
     const [mediaQueries, setMediaQueries] = useState(defaultMediaQueries);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       function updateSize() {
         setMediaQueries({
           ...mediaQueries,

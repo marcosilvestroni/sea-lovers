@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "next-i18next";
-import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { ItemLang, ListLang } from "./style";
+import Head from "next/head";
 
 const LanguageSwitcher = ({ onChange }) => {
   const { i18n } = useTranslation();
@@ -36,6 +36,12 @@ const LanguageSwitcher = ({ onChange }) => {
 
   return (
     <ListLang>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+        />
+      </Head>
       {locales.map((locale) => (
         <ItemLang
           key={locale}

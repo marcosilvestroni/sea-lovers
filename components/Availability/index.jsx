@@ -78,7 +78,11 @@ const Availability = ({ t }) => {
     dates.startDate = dates.startDate.toLocaleDateString("it-IT");
     const data = new FormData(form.current);
 
-    if (!data.get("user_name") || !data.get("user_email")) {
+    if (
+      !data.get("user_name") ||
+      !data.get("user_email") ||
+      !data.get("user_phone")
+    ) {
       return;
     }
 
@@ -86,6 +90,7 @@ const Availability = ({ t }) => {
     const payload = {
       user_name: data.get("user_name"),
       user_email: data.get("user_email"),
+      user_phone: data.get("user_phone"),
       user_message: data.get("user_message"),
       ...dates,
     };
@@ -151,6 +156,18 @@ const Availability = ({ t }) => {
                   />
                   <Form.Text className="text-muted">
                     {t("contactsEmailDisclaimer")}
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formPhone">
+                  <Form.Label>{t("contactsPhone")}*</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder={t("contactsPhonePlaceholder")}
+                    name="user_phone"
+                    required
+                  />
+                  <Form.Text className="text-muted">
+                    {t("contactsPhoneDisclaimer")}
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmailTextarea">

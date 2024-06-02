@@ -8,9 +8,7 @@ const Availability = () => {
   return (
     <>
       <Head>
-        <title>
-          {t("siteTitle")} | {t("availabiliyTitle")}
-        </title>
+        <title>{`${t("siteTitle")} | ${t("availabiliyTitle")}`}</title>
         <meta name="description" content={t("availabilityDescription")} />
         <meta
           property="og:title"

@@ -12,9 +12,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>
-          {t("siteTitle")} | {t("homePageTitle")}
-        </title>
+        <title>{`${t("siteTitle")} | ${t("homePageTitle")}`}</title>
         <meta name="description" content={t("homePageDescription")} />
         <meta
           property="og:title"

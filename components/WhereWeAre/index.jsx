@@ -7,7 +7,7 @@ const WhereWeAre = () => {
     <FooterWrapper>
       <Text tag="h4">Sea Lovers Italy Apartment</Text>
       <Text>via Fratelli Bandiera, 5</Text>
-      <Text>62017 Porto Recenati MC</Text>
+      <Text>62017 Porto Recanati MC</Text>
       <Text>Italy</Text>
       <Text>
         <a
