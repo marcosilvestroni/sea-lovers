@@ -547,6 +547,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@netlify/plugin-nextjs@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "@netlify/plugin-nextjs@npm:5.3.2"
+  checksum: 10c0/2109fff1a0087c3895782b9c47943683b609e49bc70e0ddd01c639736ce7368188898ff9a87c1fd62657d04d2a59260444ccf20845f3475a1c7a65a4a5a3561e
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:14.2.3":
   version: 14.2.3
   resolution: "@next/env@npm:14.2.3"
@@ -4875,6 +4882,7 @@ __metadata:
   resolution: "sea-lovers@workspace:."
   dependencies:
     "@emailjs/browser": "npm:^4.3.3"
+    "@netlify/plugin-nextjs": "npm:^5.3.2"
     "@popperjs/core": "npm:^2.11.8"
     bootstrap: "npm:^5.3.3"
     date-fns: "npm:^3.6.0"
