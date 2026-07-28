@@ -1,24 +1,27 @@
-import { ContentWrapper } from "../../styles/commons";
 import { useState, useRef } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 import {
+  AvailabilityCard,
+  AvailabilityHeader,
   AvailabilityWrapper,
   ButtonWrapper,
+  CalendarCard,
   FieldsWrapper,
+  FormHint,
   FormWrapper,
+  LoaderWrapper,
 } from "./style";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import Text from "../Text";
 import emailjs from "@emailjs/browser";
 import moment from "moment";
 import SendStatusResult from "../SendStatusResult";
 import Image from "next/image";
+import { withMediaQueries } from "../../utils/withMediaQueries";
 
-const Availability = ({ t }) => {
+const Availability = ({ t, mediaIsPhone, mediaIsTablet }) => {
   const [request, setRequest] = useState({
     dateRange: [
       {
@@ -31,6 +34,7 @@ const Availability = ({ t }) => {
   const form = useRef();
   const [loading, isLoading] = useState(false);
   const [sendStatus, setSendSatus] = useState("");
+  const [formError, setFormError] = useState("");
 
   const handleChangeDates = ({ startDate, endDate }) => {
     let start;
@@ -64,6 +68,10 @@ const Availability = ({ t }) => {
         },
       ],
     });
+
+    if (formError) {
+      setFormError("");
+    }
   };
 
   const sendAvailabilityRequest = (e) => {
@@ -71,6 +79,7 @@ const Availability = ({ t }) => {
     const dates = { ...request.dateRange[0] };
 
     if (!dates?.endDate || !dates?.startDate) {
+      setFormError(t("availabilityDatesRequired"));
       return;
     }
 
@@ -83,9 +92,11 @@ const Availability = ({ t }) => {
       !data.get("user_email") ||
       !data.get("user_phone")
     ) {
+      setFormError(t("availabilityFieldsRequired"));
       return;
     }
 
+    setFormError("");
     isLoading(true);
     const payload = {
       user_name: data.get("user_name"),
@@ -112,30 +123,40 @@ const Availability = ({ t }) => {
   };
 
   return (
-    <ContentWrapper>
+    <AvailabilityWrapper>
       {loading ? (
-        <Image src="/assets/img/6.svg" width={40} height={40} alt="spinner" />
+        <LoaderWrapper>
+          <Image src="/assets/img/6.svg" width={40} height={40} alt="spinner" />
+        </LoaderWrapper>
       ) : sendStatus === "" ? (
-        <AvailabilityWrapper>
-          <Text tag="h2" variant="header">
-            {t("availabilityTitle")}
-          </Text>
+        <AvailabilityCard>
+          <AvailabilityHeader>
+            <h1>{t("availabilityTitle")}</h1>
+            <p>{t("availabilityDescription")}</p>
+          </AvailabilityHeader>
+
           <Form
+            id="availability-form"
             className="formFields"
             ref={form}
             onSubmit={sendAvailabilityRequest}
           >
             <FormWrapper>
-              <DateRangePicker
-                ranges={request?.dateRange}
-                showDateDisplay={false}
-                showPreview={false}
-                staticRanges={[]}
-                moveRangeOnFirstSelection={false}
-                onChange={({ selection }) => {
-                  handleChangeDates(selection);
-                }}
-              />
+              <CalendarCard>
+                <DateRangePicker
+                  ranges={request?.dateRange}
+                  showDateDisplay={false}
+                  showPreview={false}
+                  staticRanges={[]}
+                  moveRangeOnFirstSelection={false}
+                  months={mediaIsPhone || mediaIsTablet ? 1 : 2}
+                  direction={mediaIsPhone ? "vertical" : "horizontal"}
+                  onChange={({ selection }) => {
+                    handleChangeDates(selection);
+                  }}
+                />
+              </CalendarCard>
+
               <FieldsWrapper>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>{t("contactsName")}*</Form.Label>
@@ -143,6 +164,8 @@ const Availability = ({ t }) => {
                     type="text"
                     placeholder={t("contactsNamePlaceholder")}
                     name="user_name"
+                    autoComplete="name"
+                    onChange={() => setFormError("")}
                     required
                   />
                 </Form.Group>
@@ -152,43 +175,53 @@ const Availability = ({ t }) => {
                     type="email"
                     placeholder={t("contactsEmailPlaceholder")}
                     name="user_email"
+                    autoComplete="email"
+                    onChange={() => setFormError("")}
                     required
                   />
-                  <Form.Text className="text-muted">
-                    {t("contactsEmailDisclaimer")}
-                  </Form.Text>
+                  <FormHint>{t("contactsEmailDisclaimer")}</FormHint>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formPhone">
                   <Form.Label>{t("contactsPhone")}*</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="tel"
                     placeholder={t("contactsPhonePlaceholder")}
                     name="user_phone"
+                    autoComplete="tel"
+                    onChange={() => setFormError("")}
                     required
                   />
-                  <Form.Text className="text-muted">
-                    {t("contactsPhoneDisclaimer")}
-                  </Form.Text>
+                  <FormHint>{t("contactsPhoneDisclaimer")}</FormHint>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEmailTextarea">
                   <Form.Label>{t("availabilityNote")}</Form.Label>
-                  <Form.Control as="textarea" rows={6} name="user_message" />
+                  <Form.Control
+                    as="textarea"
+                    rows={5}
+                    name="user_message"
+                    placeholder={t("contactsMessagePlaceholder")}
+                    onChange={() => setFormError("")}
+                  />
                 </Form.Group>
               </FieldsWrapper>
             </FormWrapper>
+            {formError && <FormHint role="alert">{formError}</FormHint>}
             <ButtonWrapper>
-              <Button variant="primary" type="submit">
+              <button type="submit">{t("availabilitySend")}</button>
+            </ButtonWrapper>
+            <ButtonWrapper isSticky>
+              <button type="submit" form="availability-form">
                 {t("availabilitySend")}
-              </Button>
+              </button>
             </ButtonWrapper>
           </Form>
-        </AvailabilityWrapper>
+        </AvailabilityCard>
       ) : (
         <SendStatusResult status={sendStatus} t={t} />
       )}
-    </ContentWrapper>
+    </AvailabilityWrapper>
   );
 };
 
-export default Availability;
+export default withMediaQueries(Availability);
 

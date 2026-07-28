@@ -8,11 +8,13 @@ export const MenuContainer = styled.div`
   }
 
   .bm-burger-bars {
-    background: #373a47;
+    background: #13323a;
+    border-radius: 999px;
+    height: 16% !important;
   }
 
   .bm-burger-bars-hover {
-    background: #816e7c;
+    background: #ff6a3d;
   }
 
   /* Position and sizing of clickable cross button */
@@ -20,12 +22,12 @@ export const MenuContainer = styled.div`
     position: relative;
     width: 2rem !important;
     height: 2rem !important;
+    right: 0.1rem !important;
+    top: 0.25rem !important;
   }
 
   .bm-cross {
-    background: #bdc3c7;
-    width: 2rem;
-    height: 2rem;
+    background: #13323a;
   }
 
   .bm-menu-wrap {
@@ -35,37 +37,45 @@ export const MenuContainer = styled.div`
   }
 
   .bm-menu {
-    background: #816e7c;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    background: linear-gradient(180deg, #fff5e7 0%, #e3f5f7 100%);
+    padding: 1.4rem 1rem 1rem;
+    font-size: 1rem;
   }
 
   /* Morph shape necessary with bubble or elastic */
   .bm-morph-shape {
-    fill: #373a47;
+    fill: #fff5e7;
   }
 
   /* Wrapper for item list */
   .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-    margin-top: 4rem;
+    color: #13323a;
+    padding: 0.6rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
   }
 
   /* Individual item */
   .bm-item {
-    display: inline-block;
+    display: block;
     text-decoration: none;
-    color: white;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    font-style: italic;
-    text-align: center;
+    color: #13323a;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-style: normal;
+    text-align: left;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(19, 50, 58, 0.1);
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.9rem;
   }
 
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(10, 32, 35, 0.28);
   }
 `;
 

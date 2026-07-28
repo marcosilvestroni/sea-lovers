@@ -1,39 +1,65 @@
-/* const importAll = (r) => {
-  const cache = {};
-  r.keys().forEach((key) => (cache[key] = r(key)));
-  return Object.values(cache).map(({ default: { src, width, height } }) => ({
-    src,
-    width,
-    height,
-  }));
-}; */
+const LANDSCAPE = { width: "600", height: "400" };
+const PORTRAIT = { width: "600", height: "900" };
 
-export const imagesApt = [
-  { src: "/assets/gallery/apt/1.jpg", width: "500", height: "700" },
-  { src: "/assets/gallery/apt/2.jpg", width: "600", height: "800" },
-  { src: "/assets/gallery/apt/3.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/4.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/5.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/6.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/7.jpg", width: "600", height: "800" },
-  { src: "/assets/gallery/apt/8.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/9.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/10.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/11.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/19.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/apt/20.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/21.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/apt/23.jpg", width: "600", height: "900" },
+const imageFromName = (folder, fileName, portraitList = []) => {
+  const isPortrait = portraitList.includes(fileName);
+
+  return {
+    src: `/assets/gallery/${folder}/${fileName}`,
+    ...(isPortrait ? PORTRAIT : LANDSCAPE),
+  };
+};
+
+const createImages = (folder, fileNames, portraitList = []) =>
+  fileNames.map((fileName) => imageFromName(folder, fileName, portraitList));
+
+const aptFiles = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
+  "10.jpg",
+  "11.jpg",
+  "19.jpg",
+  "20.jpg",
+  "21.jpg",
+  "22.jpg",
+  "23.jpg",
+  "24.jpg",
+  "25.jpg",
 ];
-export const imagesNbh = [
-  { src: "/assets/gallery/neighborhood/12.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/neighborhood/13.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/neighborhood/14.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/neighborhood/15.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/neighborhood/16.jpg", width: "600", height: "400" },
-  { src: "/assets/gallery/neighborhood/17.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/neighborhood/18.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/neighborhood/22.jpg", width: "600", height: "900" },
-  { src: "/assets/gallery/neighborhood/24.jpg", width: "600", height: "900" },
+
+const aptPortrait = ["1.jpg", "2.jpg", "7.jpg", "19.jpg", "23.jpg"];
+
+const neighborhoodFiles = [
+  "12.jpg",
+  "13.jpg",
+  "14.jpg",
+  "15.jpg",
+  "16.jpg",
+  "17.jpg",
+  "18.jpg",
+  "22.jpg",
+  "24.jpg",
 ];
+
+const neighborhoodPortrait = [
+  "12.jpg",
+  "15.jpg",
+  "17.jpg",
+  "18.jpg",
+  "22.jpg",
+  "24.jpg",
+];
+
+export const imagesApt = createImages("apt", aptFiles, aptPortrait);
+export const imagesNbh = createImages(
+  "neighborhood",
+  neighborhoodFiles,
+  neighborhoodPortrait,
+);
 

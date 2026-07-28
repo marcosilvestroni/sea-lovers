@@ -9,11 +9,12 @@ import Image from "next/image";
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation("common");
+
   return (
     <MenuContainer>
       <MenuRBM
         right
-        width={"100%"}
+        width={"min(86vw, 24rem)"}
         isOpen={isOpen}
         onOpen={() => setIsOpen(true)}
         onClose={() => setIsOpen(false)}
@@ -21,14 +22,17 @@ const Menu = () => {
           <Image
             src="/assets/img/cross-close.png"
             alt={t("imageGenericCaption")}
-            width={90}
-            height={90}
+            width={24}
+            height={24}
           />
         }
       >
+        <Text tag="p" variant="menu-heading">
+          Sea Lovers
+        </Text>
         <Link href="/" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
-            Home
+            {t("homePageTitle")}
           </Text>
         </Link>
         <Link href="/availability" onClick={() => setIsOpen(false)}>
@@ -38,24 +42,19 @@ const Menu = () => {
         </Link>
         <Link href="/gallery" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
-            Gallery
+            {t("galleryPageTitle")}
           </Text>
         </Link>
-        {/* <Link href="/gallery#apt" onClick={() => setIsOpen(false)}>
-          <Text tag="span" variant="sub-menu-item">
-            L'Appartamento
-          </Text>
-        </Link>
-        <Link href="/gallery#nbh" onClick={() => setIsOpen(false)}>
-          <Text tag="span" variant="sub-menu-item">
-            Dintorni
-          </Text>
-        </Link> */}
+
         <Link href="/contacts" onClick={() => setIsOpen(false)}>
           <Text tag="span" variant="menu-item">
             {t("contactsTitle")}
           </Text>
         </Link>
+
+        <Text tag="p" variant="sub-menu-item">
+          {t("homeBannerSubTitle")}
+        </Text>
       </MenuRBM>
     </MenuContainer>
   );

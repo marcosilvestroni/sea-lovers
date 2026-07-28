@@ -1,7 +1,7 @@
 import AvailabilityComp from "../components/Availability";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Availability = () => {
   const { t } = useTranslation("common");

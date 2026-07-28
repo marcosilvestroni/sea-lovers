@@ -1,9 +1,13 @@
+import { ResultCard } from "./style";
+
 const SendStatusResult = ({ status, t }) => {
+  const isSuccess = status === "OK";
+
   if (status === "OK") {
-    return <div>{t("formSuccess")}</div>;
+    return <ResultCard isSuccess>{t("formSuccess")}</ResultCard>;
   }
 
-  return <div>{t("formFail")}</div>;
+  return <ResultCard>{t("formFail")}</ResultCard>;
 };
 
 export default SendStatusResult;

@@ -1,6 +1,13 @@
 import Menu from "../Menu";
 import Image from "next/image";
-import { HeaderWrapper, ImageWrapper, Logo, MenuWrapper } from "./style";
+import {
+  CtaLink,
+  HeaderActions,
+  HeaderWrapper,
+  ImageWrapper,
+  Logo,
+  MenuWrapper,
+} from "./style";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -37,10 +44,13 @@ const Header = () => {
         </Link>
       </Logo>
 
-      <LanguageSwitcher />
-      <MenuWrapper>
-        <Menu />
-      </MenuWrapper>
+      <HeaderActions>
+        <CtaLink href="/availability">{t("availabiliyTitle")}</CtaLink>
+        <LanguageSwitcher />
+        <MenuWrapper>
+          <Menu />
+        </MenuWrapper>
+      </HeaderActions>
     </HeaderWrapper>
   );
 };

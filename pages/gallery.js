@@ -1,7 +1,7 @@
 import Photos from "../components/Photos";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Gallery = () => {
   const { t } = useTranslation("common");

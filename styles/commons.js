@@ -10,6 +10,7 @@ export const ContentWrapper = styled.div`
 
 export const PageSection = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const Overlay = styled.div`
@@ -19,4 +20,5 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 `;
