@@ -59,6 +59,10 @@ export const HeaderActions = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 0.55rem;
+
+  @media screen and (max-width: 420px) {
+    gap: 0.35rem;
+  }
 `;
 
 export const CtaLink = styled(Link)`
@@ -79,5 +83,9 @@ export const CtaLink = styled(Link)`
   @media screen and (min-width: 768px) {
     padding: 0.55rem 0.95rem;
     font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: none;
   }
 `;

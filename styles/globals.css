@@ -71,3 +71,12 @@ select {
   outline-offset: 2px;
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+html.menu-open {
+  overflow: hidden;
+}
+
