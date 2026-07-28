@@ -5,6 +5,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+        />
+        <link
           rel="apple-touch-icon"
           sizes="57x57"
           href="/apple-icon-57x57.png"

@@ -5,7 +5,7 @@ import { ItemLang, ListLang } from "./style";
 import Head from "next/head";
 
 const LanguageSwitcher = ({ onChange }) => {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation("common");
   const { language: currentLanguage } = i18n;
   const router = useRouter();
   const locales = router.locales ?? [currentLanguage];
@@ -18,7 +18,7 @@ const LanguageSwitcher = ({ onChange }) => {
 
       return router.push(path, path, { locale });
     },
-    [router]
+    [router],
   );
 
   const languageChanged = useCallback(
@@ -31,17 +31,11 @@ const LanguageSwitcher = ({ onChange }) => {
 
       await switchToLocale(locValue);
     },
-    [switchToLocale, onChange]
+    [switchToLocale, onChange],
   );
 
   return (
     <ListLang>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
-        />
-      </Head>
       {locales.map((locale) => (
         <ItemLang
           key={locale}
@@ -49,7 +43,7 @@ const LanguageSwitcher = ({ onChange }) => {
           isSelected={value === locale}
           alt={`language ${locale}`}
         >
-          <span class={`fi fi-${locale === "en" ? "gb" : locale}`}></span>
+          <span className={`fi fi-${locale === "en" ? "gb" : locale}`}></span>
         </ItemLang>
       ))}
     </ListLang>
@@ -57,4 +51,3 @@ const LanguageSwitcher = ({ onChange }) => {
 };
 
 export default LanguageSwitcher;
-
