@@ -1,17 +1,24 @@
 import Image from "next/image";
 import Text from "../Text";
-import { TextWapper } from "./style";
+import Link from "next/link";
+import {
+  ActionsRow,
+  ChipRow,
+  HeroCard,
+  HeroMedia,
+  HeroShell,
+  TextWapper,
+} from "./style";
 
 import { withMediaQueries } from "../../utils/withMediaQueries";
 
-import { ContentWrapper, Overlay } from "../../styles/commons";
+import { Overlay } from "../../styles/commons";
 
 const Banner = ({ t, mediaIsPhone }) => {
   return (
-    <>
-      <Image src="/assets/img/pool.webp" alt={t("imageGenericCaption")} fill />
-      <ContentWrapper>
-        <Overlay />
+    <HeroShell>
+      <HeroMedia>
+        <Image src="/assets/img/pool.webp" alt={t("imageGenericCaption")} fill priority />
         <TextWapper>
           {mediaIsPhone ? (
             <>
@@ -34,9 +41,26 @@ const Banner = ({ t, mediaIsPhone }) => {
           <Text tag={"h2"} variant="sub-heading-shadow">
             {t("homeBannerSubTitle")}
           </Text>
+
+          <ChipRow>
+            <span>50m Mare</span>
+            <span>Centro Citta</span>
+            <span>Family Friendly</span>
+          </ChipRow>
+
+          <ActionsRow>
+            <Link href="/availability">{t("availabiliyTitle")}</Link>
+            <Link href="/gallery">{t("galleryPageTitle")}</Link>
+          </ActionsRow>
         </TextWapper>
-      </ContentWrapper>
-    </>
+
+        <Overlay />
+      </HeroMedia>
+
+      <HeroCard>
+        <Text tag="p">{t("homePageDescrBlock6")}</Text>
+      </HeroCard>
+    </HeroShell>
   );
 };
 

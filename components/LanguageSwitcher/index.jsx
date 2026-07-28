@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { ItemLang, ListLang } from "./style";
-import Head from "next/head";
 
 const LanguageSwitcher = ({ onChange }) => {
   const { i18n } = useTranslation("common");
