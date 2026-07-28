@@ -4,22 +4,23 @@ import { HeaderWrapper, ImageWrapper, Logo, MenuWrapper } from "./style";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 const Header = () => {
   const [isOnTop, setIsOnTop] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    const handleScroll = () => {
       setIsOnTop(!Boolean(window.scrollY));
-    });
+    };
 
-    return document.removeEventListener("scoll", () => {
-      setIsOnTop(!Boolean(window.scrollY));
-    });
-  });
+    handleScroll();
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <HeaderWrapper isOnTop={isOnTop}>
