@@ -10,22 +10,22 @@ import {
   ThreeBlocksWrapper,
 } from "./style";
 
-const ThreeBlocks = ({ t }) => {
+const ThreeBlocks = ({ t, homeCardImages = {} }) => {
   const cards = [
     {
-      image: "/assets/gallery/apt/21.jpg",
+      image: homeCardImages.firstBlockImage ?? "/assets/gallery/apt/21.jpg",
       title: t("homePageBlock1"),
       link: "/availability",
       cta: t("availabiliyTitle"),
     },
     {
-      image: "/assets/gallery/apt/5.jpg",
+      image: homeCardImages.secondBlockImage ?? "/assets/gallery/apt/5.jpg",
       title: t("homePageBlock2"),
       link: "/gallery",
       cta: t("galleryPageTitle"),
     },
     {
-      image: "/assets/gallery/apt/6.jpg",
+      image: homeCardImages.thirdBlockImage ?? "/assets/gallery/apt/6.jpg",
       title: t("homePageBlock3"),
       link: "/contacts",
       cta: t("contactsTitle"),
