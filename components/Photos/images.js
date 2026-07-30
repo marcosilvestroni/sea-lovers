@@ -17,8 +17,9 @@ const createImages = (folder, fileNames, portraitList = []) =>
 
 const aptFiles = [
   "a.jpg",
-  "b.jpg",
-  "c.jpg",
+  "c1.jpeg",
+  "c2.jpeg",
+  "c4.jpeg",
   "d.jpg",
   "e.jpg",
   "f.jpg",
